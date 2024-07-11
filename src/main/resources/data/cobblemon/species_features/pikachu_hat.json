@@ -1,0 +1,16 @@
+{
+  "keys": ["pikachu_hat"],
+  "type": "choice",
+  "choices": [
+    "none",
+    "original",
+    "hoenn",
+    "sinnoh",
+    "unova",
+    "kalos",
+    "alola",
+    "partner"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cobbletransformations",
+  "version": "2.0",
+  "name": "CobbleTransformations",
+  "description": "Fixes some miscellaneous issues in Cobblemon",
+  "authors": [
+    "DujmovicD",
+    "UnsafeDodo"
+  ],
+  "contact": {
+    "repo": "https://github.com/dujmovic-d/CobbleTransformations"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.huli.zcrystals.fabric.CobblemonFabric"
+    ],
+    "client": []
+  },
+  "mixins": [
+    "mixins.cobbletransformations-common.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "fabric": ">=0.88.1",
+    "minecraft": ">=1.20.1",
+    "java": ">=17"
+  }
+}
