@@ -1,57 +1,110 @@
-# CobbleTransformations
+# Hulis Z-Crystals
+> Hulis Z-Crystals is a mod that adds Z-Crystals to Minecraft<br>
+> If you like my work consider supporting me on [Ko-fi](https://ko-fi.com/huligani123)<br>
 
-# How to add textures to a PolymerItem
+## Table of Contents
+- [Configuration](#configuration)
+- [Getting Started](#getting-started)
+- [Obtaining Z-Crystals](#obtaining-z-crystals)
+- [Pokémon Specific Z-Crystals](#pokémon-specific-z-crystals)
+- [Serverside Resource Pack](#serverside-resource-pack)
 
-### Example on adding the Dynamax Candy
-Let's first assume `MOD_ID` is equal to `cobbletransformations`<br>
-We need to declare a PolymerModelData we will use later.<br>
-In the main class of the mod (the one with the `initialize()` method) let's declare
-`lateinit var candyModelData: PolymerModelData` as well as the item itself
-`val DYNAMAX_CANDY: DynamaxCandy = DynamaxCandy(FabricItemSettings().maxCount(64).rarity(Rarity.RARE), Items.HONEYCOMB)`
+## Configuration
+> The Configuration file for this mod is located in the `config` folder under `zcrystals`<br>
+>> COMMAND_Z_RING_PERMISSION_LEVEL: The Permission Level required to use the `/keyitem` command<br>
+>> Default: `4`<br>
+>
+>> SERVERSIDE: If the Mod should be launched Serverside only or require it to be installed on clients<br>
+>> Default: `false`<br>
 
-Then, in the `initialize()` method, we have to register the custom item
-`Registry.register(Registries.ITEM, Identifier(MOD_ID, "dynamaxcandy"), DYNAMAX_CANDY)`<br>
-Then we have to check if the mod is valid `val isModValid = PolymerResourcePackUtils.addModAssets(MOD_ID)` (will return a boolean)
-<br>Now let's mark the resourcepack as required and request the model of the item
-```kotlin
-if(isModValid){
-    PolymerResourcePackUtils.markAsRequired()
-    candyModelData = PolymerResourcePackUtils.requestModel(Items.HONEYCOMB, Identifier(MOD_ID, 
-        "item/dynamaxcandy"))
-        }
-```
+## Getting Started
 
-Then, in the custom item's class (`DynamaxCandy` in this case), let's declare a PolymerModelData object `PolymerModelData modelData;`
-<br>Then we have to override the `getPolymerCustomModelData()` method
-```java
-@Override
-    public int getPolymerCustomModelData(ItemStack itemStack, @Nullable ServerPlayerEntity player){
-        this.modelData = cobbletransformations.candyModelData;
-        return this.modelData.value();
-    }
-```
+> To get started you need 2 things:
+>>Some Blank Z-Crystals ![Blank Z-Crystal](https://i.imgur.com/neM2KgG_d.webp?maxwidth=760&fidelity=grand)<br>
+>>A Z-Ring ![Z-Ring](https://i.imgur.com/B7kWRbp_d.webp?maxwidth=760&fidelity=grand)
+Once you have the Z-Ring you need to right-click in the Air to enable using Z-Moves<br>
+> Once you do that you will have a button for Z-Moves in your Battle GUI when<br>
+> a Pokémon is holding a Z-Crystal that can use a Z-Move.<br>
 
-Then, in the `resources/assets` folder, let's create a new folder called exactly like the `MOD_ID` (`cobbletransformations`).
-<br>Inside of it, let's create 3 folders called `lang`, `models` and `textures`
+## Obtaining Z-Crystals
+> Z-Crystals are obtained by right-clicking certain Blocks/Entities with a Blank Z-Crystal<br>
+> The Z-Crystal will be consumed, and you will get a Z-Crystal<br>
+> ### Normalium Z
+> Made by crafting a Blank Z-Crystal with nothing in a shapeless recipe<br>
+> ![Normalium Z](https://i.imgur.com/A1Keq1U_d.webp?maxwidth=760&fidelity=grand)<br>
+> ### Fightinium Z
+> Made by right-clicking a Bamboo Block with a Blank Z-Crystal<br>
+> ### Firium Z
+> Made by right-clicking a Magma Block with a Blank Z-Crystal<br>
+> ### Waterium Z
+> Made by right-clicking a Wet Sponge with a Blank Z-Crystal<br>
+> ### Electrium Z
+> Made by right-clicking a Copper Block with a Blank Z-Crystal<br>
+> ### Grassium Z
+> Made by right-clicking a Wheat Crop with a Blank Z-Crystal<br>
+> ### Icium Z
+> Made by right-clicking Powder Snow with a Blank Z-Crystal<br>
+> ### Rockium Z
+> Made by right-clicking Bedrock with a Blank Z-Crystal<br>
+> ### Steelium Z
+> Made by right-clicking an Iron Golem with a Blank Z-Crystal<br>
+> ### Poisonium Z
+> Made by right-clicking a Potato Crop with a Blank Z-Crystal **(Peaceful Mode Only)**<br>
+> Made by right-clicking a Cave Spider with a Blank Z-Crystal **(Every Mode except Peaceful)**<br>
+> ### Ghostium Z
+> Made by right-clicking Soul Sand with a Blank Z-Crystal<br>
+> ### Darkinium Z
+> Made by right-clicking Reinforced Deepslate with a Blank Z-Crystal<br>
+> ### Fairium Z
+> Made by right-clicking a Vex with a Blank Z-Crystal<br>
+> ### Dragonium Z
+> Made by right-clicking an End Portal Frame with a Blank Z-Crystal<br>
+> ### Buginium Z
+> Made by right-clicking a Beehive with a Blank Z-Crystal<br>
+> ### Psychium Z
+> Made by right-clicking an End Gateway with a Blank Z-Crystal<br>
+> ### Groundium Z
+> Made by right-clicking a Mud Block with a Blank Z-Crystal<br>
+> ### Flyinium Z
+> Made by right-clicking a Chicken with a Blank Z-Crystal<br>
+ 
+## Pokémon Specific Z-Crystals
+> ### Aloraichium Z
+> Made by right-clicking an Alolan Raichu with an Electrium Z<br>
+> ### Decidium Z
+> Made by right-clicking a Decidueye with a Grassium Z<br>
+> ### Incinium Z
+> Made by right-clicking an Incineroar with a Firium Z<br>
+> ### Primarium Z
+> Made by right-clicking a Primarina with a Waterium Z<br>
+> ### Pikanium Z
+> Made by right-clicking a Pikachu with an Electrium Z<br>
+> ### Pikashunium Z
+> Made by right-clicking a Hat Pikachu with an Electrium Z<br>
+> ### Tapunium Z
+> Made by right-clicking any Tapu with a Fairium Z<br>
+> ### Marshadium Z
+> Made by right-clicking a Marshadow with a Ghostium Z<br>
+> ### Mimikium Z
+> Made by right-clicking a Mimikyu with a Ghostium Z<br>
+> ### Lycanium Z
+> Made by right-clicking a Lycanroc with a Rockium Z<br>
+> ### Kommonium Z
+> Made by right-clicking a Kommo-o with a Dragonium Z<br>
+> ### Solganium Z
+> Made by right-clicking a Solgaleo with a Psychium Z<br>
+> ### Lunalium Z
+> Made by right-clicking a Lunala with a Psychium Z<br>
+> ### Ultranecrozium Z
+> Made by right-clicking a Necrozma with a Psychium Z (Currently not working in battle)<br>
+> ### Eevium Z
+> Made by right-clicking an Eevee with a Normalium Z<br>
+> ### Mewnium Z
+> Made by right-clicking a Mew with a Psychium Z<br>
+> ### Snorlium Z
+> Made by right-clicking a Snorlax with a Normalium Z<br>
 
-In the `lang` folder, let's create a file called `en_us.json` and inside of it, we will have to give the displayed name of the item
-```json5
-{
-  "item.cobbletransformations.dynamaxcandy": "Dynamax Candy"
-}
-```
-
-In the `models` folder, let's create a folder called `item`, and inside of it, we have to create a json file called
-exactly as the item name
-(in this case `dynamaxcandy.json`), and inside of it let's declare the `parent` and `textures`
-```json5
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "cobbletransformations:item/dynamaxcandy"
-  }
-}
-```
-
-Finally, in the `textures` folder, let's create a new folder called `item`, and inside of it let's insert a .png file
-of size 16x16 with the item's textures, and name it as the item's name (in this case `dynamaxcandy.png`)
+## Serverside Resource Pack
+> The Mod comes with a Serverside Resource Pack that changes the Z-Crystals to look like the ones from the games<br>
+> You will need to merge the resource pack with your own Server Resource Pack if you have one<br>
+> You can find the Resource Pack in this GitHub Repository [Hulis-Z-Crystals-Resource-Pack.zip](https://github.com/dujmovic-d/HulisZCrystals/blob/master/HulisZCrystalsResourcePack.zip)<br>

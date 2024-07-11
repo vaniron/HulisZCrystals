@@ -8,16 +8,13 @@ import net.minecraft.entity.mob.CaveSpiderEntity;
 import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.World;
 
 import java.util.Objects;
 
@@ -42,7 +39,7 @@ public class BlankZCrystal extends Item {
             player.giveItemStack(new ItemStack(ZCrystalsClientSide.FIRIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(block == Blocks.VINE){
+        if(block == Blocks.BEEHIVE){
             heldStack.decrement(1);
             player.giveItemStack(new ItemStack(ZCrystalsClientSide.BUGINIUM_Z));
             return ActionResult.SUCCESS;
@@ -62,7 +59,7 @@ public class BlankZCrystal extends Item {
             player.giveItemStack(new ItemStack(ZCrystalsClientSide.ROCKIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(block == Blocks.END_PORTAL_FRAME){
+        if(block == Blocks.DRAGON_HEAD || block == Blocks.DRAGON_WALL_HEAD){
             heldStack.decrement(1);
             player.giveItemStack(new ItemStack(ZCrystalsClientSide.DRAGONIUM_Z));
             return ActionResult.SUCCESS;
@@ -138,9 +135,9 @@ public class BlankZCrystal extends Item {
 }
 
 
-// Bug - Vines
+// Bug - Beehive
 // Dark - Reinforced Deepslate
-// Dragon - End Portal Frame
+// Dragon - Dragon Head
 // Electric - Copper Block
 // Fairy - Allay
 // Fighting - Bamboo Block

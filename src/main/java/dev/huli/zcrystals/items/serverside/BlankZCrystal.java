@@ -2,8 +2,6 @@ package dev.huli.zcrystals.items.serverside;
 
 import dev.huli.zcrystals.util.ZCrystalsClientSide;
 import dev.huli.zcrystals.util.ZCrystalsServerSide;
-import dev.huli.zcrystals.util.ZCrystalsServerSide;
-import eu.pb4.polymer.core.api.item.PolymerItem;
 import eu.pb4.polymer.core.api.item.SimplePolymerItem;
 import eu.pb4.polymer.resourcepack.api.PolymerModelData;
 import net.minecraft.block.Block;
@@ -20,9 +18,7 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
@@ -49,7 +45,7 @@ public class BlankZCrystal extends SimplePolymerItem {
             player.giveItemStack(new ItemStack(ZCrystalsServerSide.FIRIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(block == Blocks.VINE){
+        if(block == Blocks.BEEHIVE){
             heldStack.decrement(1);
             player.giveItemStack(new ItemStack(ZCrystalsServerSide.BUGINIUM_Z));
             return ActionResult.SUCCESS;
@@ -69,7 +65,7 @@ public class BlankZCrystal extends SimplePolymerItem {
             player.giveItemStack(new ItemStack(ZCrystalsServerSide.ROCKIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(block == Blocks.END_PORTAL_FRAME){
+        if(block == Blocks.DRAGON_HEAD || block == Blocks.DRAGON_WALL_HEAD){
             heldStack.decrement(1);
             player.giveItemStack(new ItemStack(ZCrystalsServerSide.DRAGONIUM_Z));
             return ActionResult.SUCCESS;
