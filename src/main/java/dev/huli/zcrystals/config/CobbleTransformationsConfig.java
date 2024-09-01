@@ -17,7 +17,7 @@ public class CobbleTransformationsConfig {
     }
 
     public static void writeConfig(){
-        File dir = ZCrystals.INSTANCE.getConfigDir();
+        File dir = ZCrystals.configDir;
         dir.mkdirs();
         Gson gson = Adapters.MAIN_CONFIG_GSON;
         CobbleTransformationsConfig config = new CobbleTransformationsConfig();
@@ -33,21 +33,21 @@ public class CobbleTransformationsConfig {
             writer.close();
         }
         catch (IOException e){
-            ZCrystals.INSTANCE.getLog().warn(e);
+            ZCrystals.log.warn(e);
         }
     }
 
     public static CobbleTransformationsConfig getConfig(){
-        File dir = ZCrystals.INSTANCE.getConfigDir();
+        File dir = ZCrystals.configDir;
         dir.mkdirs();
         Gson gson = Adapters.MAIN_CONFIG_GSON;
         File file = new File(dir, "competitivebattles.json");
-        JsonReader reader = null;
+        JsonReader reader;
         try{
             reader = new JsonReader(new FileReader(file));
         }
         catch (FileNotFoundException e){
-            ZCrystals.INSTANCE.getLog().error(e);
+            ZCrystals.log.error(e);
             return null;
         }
 
@@ -56,7 +56,7 @@ public class CobbleTransformationsConfig {
 
     public static void updateConfig(CobbleTransformationsConfig config){
 
-        File dir = ZCrystals.INSTANCE.getConfigDir();
+        File dir = ZCrystals.configDir;
         dir.mkdirs();
         Gson gson = Adapters.MAIN_CONFIG_GSON;
         try{
@@ -68,7 +68,7 @@ public class CobbleTransformationsConfig {
             writer.close();
         }
         catch (IOException e){
-            ZCrystals.INSTANCE.getLog().warn(e);
+            ZCrystals.log.warn(e);
         }
     }
 }
