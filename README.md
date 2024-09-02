@@ -57,7 +57,8 @@ Once you have the Z-Ring you need to right-click in the Air to enable using Z-Mo
 > ### Darkinium Z
 > Made by right-clicking Reinforced Deepslate with a Blank Z-Crystal<br>
 > ### Fairium Z
-> Made by right-clicking a Vex with a Blank Z-Crystal<br>
+> Made by right-clicking an Allay with a Blank Z-Crystal **(Peaceful Mode Only)**<br>
+> Made by right-clicking a Vex with a Blank Z-Crystal **(Every Mode except Peaceful)**<br>
 > ### Dragonium Z
 > Made by right-clicking an End Portal Frame with a Blank Z-Crystal<br>
 > ### Buginium Z
