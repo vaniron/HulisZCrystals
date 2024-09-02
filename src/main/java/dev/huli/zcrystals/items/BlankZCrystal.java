@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.CaveSpiderEntity;
 import net.minecraft.entity.mob.VexEntity;
+import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -99,8 +100,12 @@ public class BlankZCrystal extends SimplePolymerItem {
             playerEntity.setStackInHand(hand, new ItemStack(ZCrystalItems.FLYINIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(livingEntity instanceof VexEntity){
+        if(playerEntity.getEntityWorld().getDifficulty() != Difficulty.PEACEFUL && livingEntity instanceof VexEntity){
             livingEntity.kill();
+            playerEntity.setStackInHand(hand, new ItemStack(ZCrystalItems.FAIRIUM_Z));
+            return ActionResult.SUCCESS;
+        }
+        if(playerEntity.getEntityWorld().getDifficulty() == Difficulty.PEACEFUL && livingEntity instanceof AllayEntity){
             playerEntity.setStackInHand(hand, new ItemStack(ZCrystalItems.FAIRIUM_Z));
             return ActionResult.SUCCESS;
         }

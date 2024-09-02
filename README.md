@@ -1,6 +1,7 @@
 # Hulis Z-Crystals
 > Hulis Z-Crystals is a mod that adds Z-Crystals to Minecraft<br>
 > If you like my work consider supporting me on [Ko-fi](https://ko-fi.com/huligani123)<br>
+> Thanks to Sanji for the Textures<br>
 
 ## Table of Contents
 - [Configuration](#configuration)
