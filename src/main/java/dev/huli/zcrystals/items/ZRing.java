@@ -16,6 +16,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
+
 public class ZRing extends SimplePolymerItem {
     PolymerModelData modelData;
     public ZRing(Settings settings, Item polymerItem) {
@@ -39,6 +41,7 @@ public class ZRing extends SimplePolymerItem {
             return TypedActionResult.fail(playerEntity.getStackInHand(hand));
         }
         else {
+            Cobblemon.playerDataManager.getGenericData(playerEntity.getUuid()).setKeyItems(Collections.singleton(Identifier.of("cobblemon","z_ring")));
             playerEntity.sendMessage(Text.literal("You obtained the ability to use Z-Moves!").formatted(Formatting.GREEN),true);
             playerEntity.getStackInHand(hand).decrement(1);
             return TypedActionResult.success(playerEntity.getStackInHand(hand));
