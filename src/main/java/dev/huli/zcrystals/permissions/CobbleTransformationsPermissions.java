@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.permission.CobblemonPermission;
 import com.cobblemon.mod.common.api.permission.PermissionLevel;
 import dev.huli.zcrystals.ZCrystals;
-import net.minecraft.command.CommandSource;
+import net.minecraft.server.command.ServerCommandSource;
 
 public class CobbleTransformationsPermissions {
 
@@ -23,7 +23,7 @@ public class CobbleTransformationsPermissions {
         return PermissionLevel.CHEAT_COMMANDS_AND_COMMAND_BLOCKS;
     }
 
-    public static boolean checkPermission(CommandSource source, CobblemonPermission permission) {
+    public static boolean checkPermission(ServerCommandSource source, CobblemonPermission permission) {
         return Cobblemon.INSTANCE.getPermissionValidator().hasPermission(source, permission);
     }
 }
