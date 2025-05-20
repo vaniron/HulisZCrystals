@@ -13,7 +13,6 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.Collections;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
@@ -48,7 +47,7 @@ public class GiveKeyItemCommand {
         if (player != null) {
             switch (keyItem){
                 case "ZRing":
-                    Cobblemon.playerDataManager.getGenericData(player.getUuid()).setKeyItems(Collections.singleton(Identifier.of("cobblemon","z_ring")));
+                    Cobblemon.playerDataManager.getGenericData(player.getUuid()).getKeyItems().add(Identifier.of("cobblemon","z_ring"));
                     break;
             }
 
