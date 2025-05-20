@@ -58,7 +58,7 @@ public class BlankZCrystal extends SimplePolymerItem {
             player.setStackInHand(itemUsageContext.getHand(), new ItemStack(ZCrystalItems.ROCKIUM_Z));
             return ActionResult.SUCCESS;
         }
-        if(block == Blocks.DRAGON_HEAD || block == Blocks.DRAGON_WALL_HEAD){
+        if(block == Blocks.END_PORTAL_FRAME){
             player.setStackInHand(itemUsageContext.getHand(), new ItemStack(ZCrystalItems.DRAGONIUM_Z));
             return ActionResult.SUCCESS;
         }
